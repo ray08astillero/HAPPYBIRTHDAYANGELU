@@ -1,0 +1,135 @@
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 120, 180, .15), transparent 35%),
+    #080808;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.album-header {
+  text-align: center;
+  padding: 55px 20px 80px;
+}
+
+.album-header a {
+  color: #ffc4df;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 35px;
+}
+
+.album-header h1 {
+  font-size: clamp(2.2rem, 7vw, 5rem);
+  margin: 0 0 10px;
+}
+
+.album-header p {
+  color: #e9bfd2;
+  font-size: 1.1rem;
+}
+
+.timeline {
+  width: min(1000px, 92vw);
+  margin: auto;
+  position: relative;
+  padding: 0 0 80px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: rgba(255, 147, 195, .35);
+  transform: translateX(-50%);
+}
+
+.memory {
+  position: relative;
+  width: 50%;
+  padding: 0 45px 75px 0;
+}
+
+.memory:nth-child(even) {
+  margin-left: 50%;
+  padding: 0 0 75px 45px;
+}
+
+.dot {
+  position: absolute;
+  right: -9px;
+  top: 18px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ff83b7;
+  border: 4px solid #160b14;
+  box-shadow: 0 0 20px rgba(255, 131, 183, .7);
+  z-index: 2;
+}
+
+.memory:nth-child(even) .dot {
+  left: -9px;
+  right: auto;
+}
+
+.memory-card {
+  padding: 18px;
+  border-radius: 22px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.13);
+  box-shadow: 0 15px 45px rgba(0,0,0,.3);
+}
+
+.memory-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 10 / 7;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 10px 0 17px;
+}
+
+.date {
+  color: #ff9ec5;
+  font-size: .8rem;
+  letter-spacing: 2px;
+}
+
+.memory-card h2 {
+  margin: 0 0 8px;
+}
+
+.memory-card p {
+  color: #d7c4ce;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .timeline::before {
+    left: 12px;
+  }
+
+  .memory,
+  .memory:nth-child(even) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 0 55px 38px;
+  }
+
+  .dot,
+  .memory:nth-child(even) .dot {
+    left: 3px;
+    right: auto;
+  }
+}
